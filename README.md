@@ -1,5 +1,7 @@
 # PROJETO INTEGRADOR
 
+![lp_logo_unipam.png](http://ap.imagensbrasil.org/images/2017/09/23/lp_logo_unipam.png)
+
 Sistema de solicitações entre setores de uma empresa.
 
 ## O Que é o Projeto?
@@ -11,10 +13,11 @@ mais detalhes e o andamento da solicitação.
 
 ## Linguagens e Ferramentas
 
-* Vue.JS ![logob00cc.png](http://ap.imagensbrasil.org/images/2017/09/23/logob00cc.png)
+*  ![logob00cc.png](http://ap.imagensbrasil.org/images/2017/09/23/logob00cc.png) Vue.JS
 
-* Vue Material
+*  ![logo-vue-material.png](http://ap.imagensbrasil.org/images/2017/09/23/logo-vue-material.png) Vue Material
 
+*  ![firebase-logo.png](http://ap.imagensbrasil.org/images/2017/09/23/firebase-logo.png)  Firebase
 
 
 ## Integrantes
@@ -22,3 +25,11 @@ mais detalhes e o andamento da solicitação.
 * Lucas Bruno Ferreira
 * Nome
 * Nome
+
+## Relatório
+
+| Data          | Andamento           
+| ------------- |:--------------------------:|
+|  *27/09/2017* | Pagina de Login e Cadastro |
+|               |                            |  
+|               |                            |  
