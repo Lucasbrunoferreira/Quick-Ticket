@@ -15,7 +15,8 @@ mais detalhes e o andamento da solicitação.
 
 * Vue Material
 
-  [vueLogo]: https://uploaddeimagens.com.br/imagens/logo-png--2090 "Vue.JS"
+  Vue.JS
+  ![alt text](https://br.vuejs.org/images/logo.png "Vue.JS")
 
 ## Integrantes
 
