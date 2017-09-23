@@ -13,11 +13,11 @@ mais detalhes e o andamento da solicitação.
 
 ## Linguagens e Ferramentas
 
-*  ![logob00cc.png](http://ap.imagensbrasil.org/images/2017/09/23/logob00cc.png) Vue.JS
+  ![logob00cc.png](http://ap.imagensbrasil.org/images/2017/09/23/logob00cc.png) Vue.JS
 
-*  ![logo-vue-material.png](http://ap.imagensbrasil.org/images/2017/09/23/logo-vue-material.png) Vue Material
+  ![logo-vue-material.png](http://ap.imagensbrasil.org/images/2017/09/23/logo-vue-material.png) Vue Material
 
-*  ![firebase-logo.png](http://ap.imagensbrasil.org/images/2017/09/23/firebase-logo.png)  Firebase
+  ![firebase-logo.png](http://ap.imagensbrasil.org/images/2017/09/23/firebase-logo.png)  Firebase
 
 
 ## Integrantes
@@ -28,8 +28,8 @@ mais detalhes e o andamento da solicitação.
 
 ## Relatório
 
-| Data          | Andamento           
-| ------------- |:--------------------------:|
-|  *27/09/2017* | Pagina de Login e Cadastro |
-|               |                            |  
-|               |                            |  
+| Data            | Andamento           
+| --------------- |:--------------------------:|
+|  **27/09/2017** | Pagina de Login e Cadastro |
+|                 |                            |  
+|                 |                            |  
