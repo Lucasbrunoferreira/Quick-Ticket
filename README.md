@@ -23,7 +23,7 @@ mais detalhes e o andamento da solicitação.
 ## Integrantes
 
 * Lucas Bruno Ferreira
-* Nome
+* Vinícius Rodrigues de Freitas
 * Nome
 
 ## Relatório
