@@ -11,12 +11,11 @@ mais detalhes e o andamento da solicitação.
 
 ## Linguagens e Ferramentas
 
-* Vue.JS ![alt text][vueLogo]
+* Vue.JS ![logob00cc.png](http://ap.imagensbrasil.org/images/2017/09/23/logob00cc.png)
 
 * Vue Material
 
-  Vue.JS
-  ![alt text](https://br.vuejs.org/images/logo.png "Vue.JS")
+
 
 ## Integrantes
 
