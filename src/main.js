@@ -4,25 +4,18 @@ import VueRouter from 'vue-router' // responsavel por ligações e rotas entre p
 import VueMaterial from 'vue-material' // biblioteca de .css baseada em Material Design
 import 'vue-material/dist/vue-material.css'
 
+import firebase from 'firebase'
+import firebaseui from 'firebaseui'
+import router from './router'
+import {config} from './helpers/firebaseConfig'
+
 // importação das paginas
 import App from './App'
-import Page1 from './components/page1.vue'
-import Page2 from './components/page2.vue'
 
 // exigindo que o Vue use os componentes importados
 Vue.use(VueMaterial)
 Vue.use(VueRouter)
-
-// definindo as rotas a serem renderizadas pelos componentes
-const routes = [
-  { path: '/page1', component: Page1 },
-  { path: '/page2', component: Page2 }
-]
-
-// definindo struct routes em apenas uma const
-const router = new VueRouter({
-  routes
-})
+Vue.use(firebaseui)
 
 // Configurações das cores a serem usadas pelo Vue Material
 Vue.material.registerTheme('default', {
@@ -32,10 +25,20 @@ Vue.material.registerTheme('default', {
   background: 'white'
 })
 
-// Inicialização e Renderização das pages
 Vue.config.productionTip = false
 
 new Vue({
   router,
+  created () {
+    firebase.initializeApp(config)
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$router.push('/success')
+      } else {
+        this.$router.push('/auth')
+      }
+    })
+  },
+  el: '#app',
   render: h => h(App)
-}).$mount('#app')
+})

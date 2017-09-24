@@ -1,13 +1,17 @@
 <template>
-  <md-toolbar>
-    <h2 class="md-title">Page1</h2>
-  </md-toolbar>
+  <div>
+    <SideMenu></SideMenu>
+    <h1>Hello</h1>
+  </div>
 </template>
 
 <script>
-  export default {
-
+import SideMenu from './sidemenu'
+export default {
+  components: {
+    SideMenu
   }
+}
 </script>
 
 <style>
