@@ -24,7 +24,7 @@ mais detalhes e o andamento da solicitação.
 
 * Lucas Bruno Ferreira
 * Vinícius Rodrigues de Freitas
-* Nome
+* Carlos Eduardo Bruno
 
 ## Relatório
 
