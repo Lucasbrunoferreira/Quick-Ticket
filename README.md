@@ -31,5 +31,5 @@ mais detalhes e o andamento da solicitação.
 | Data            | Andamento           
 | --------------- |:--------------------------:|
 |  **27/09/2017** | Pagina de Login e Cadastro |
-|                 |                            |  
-|                 |                            |  
+|  **25/10/2017** | *a definir*                |  
+|  **29/11/2017** | *a definir*                |  
