@@ -18,11 +18,25 @@ Vue.use(VueRouter)
 Vue.use(firebaseui)
 
 // Configurações das cores a serem usadas pelo Vue Material
+// de acordo com Pallet do Material Design
 Vue.material.registerTheme('default', {
-  primary: 'teal',
-  accent: 'green',
-  warn: 'light-green',
-  background: 'white'
+  primary: {
+    color: 'teal',
+    hue: 600,
+    textColor: 'white'
+  },
+  secundary: {
+    color: 'white',
+    textColor: 'black'
+  },
+  icons: {
+    color: 'white',
+    hue: 100
+  },
+  background: {
+    color: 'grey',
+    hue: 200
+  }
 })
 
 Vue.config.productionTip = false

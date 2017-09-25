@@ -1,8 +1,7 @@
-<template>
+<template lang="html">
   <div>
     <SideMenu></SideMenu>
-    <md-button class="md-raised md-primary" v-on:click='logOut'>Log out</md-button>
-    <p>Bem vindo {{name}} !</p>
+    <md-button class="md-raised md-primary" v-on:click='logOut'>{{name}}</md-button>
   </div>
 </template>
 
@@ -40,5 +39,5 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css">
 </style>
