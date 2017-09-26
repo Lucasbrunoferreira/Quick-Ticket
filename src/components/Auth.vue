@@ -1,15 +1,12 @@
 <template lang="html">
   <main class="phone-viewport">
-    <md-layout md-gutter>
-        <header id="header"></header>
-    </md-layout>
-    <md-layout md-gutter>
-      <md-layout md-align="center" id="inicio">
+        <md-layout md-gutter>
+      <md-layout md-align="center">
         <img id="logo-img" src="../assets/quick-ticket.png">
       </md-layout>
     </md-layout>
     <md-layout md-gutter>
-      <md-layout md-align="center">
+      <md-layout md-align="center" class="card-position">
         <span class="card-login">
           <div id="msg-bv">Seja Bem Vindo!</div>
           <div id="firebaseui-auth-container"></div>
@@ -44,32 +41,29 @@ export default {
 </script>
 
 <style lang="css">
+  .card-position{
+    padding-top: 2%;
+  }
   .card-login{
    background-color: #fff !important;
    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.5);
-   height: 220px;
-   width: 300px;
+   height: 112%;
+   width: 22%;
   }
   #msg-bv{
     font-family: 'Pacifico', cursive;
     color: #004D40;
     font-size: 1.6em;
-    padding-top: 1em;
-    padding-left: 2.8em;
-
-  }
-  #inicio{
-    height: 13em;
+    padding-top: 8%;
+    padding-left: 24%;
   }
   #logo-img{
-    height: 8em;
-    width: auto;
-  }
-  #header{
-    height: 7em;
+    padding-top: 5%;
+    height: 90%;
+    width: 18%;
   }
   #firebaseui-auth-container{
-    padding-top: 1.4em;
+    padding-top: 7%;
   }
   body{
     background-color: #004D40 !important;
