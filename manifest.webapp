@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "Projeto Integrador",
+  "launch_path": "/index.html",
+  "description": "Projeto Integrador da Universadidade",
+  "icons": {
+    "128": "/images/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "Lucas Bruno Ferreira",
+    "url": ""
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "pt-br",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Integration Project",
+      "description": "A project of student the Tecnology"
+    }
+  }
+}
