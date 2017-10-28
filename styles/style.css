@@ -1,3 +1,5 @@
+/* Login */
+
 #login-wall{
   background: #06112d url("../images/wall.jpg") no-repeat center top fixed;
 
@@ -20,15 +22,50 @@
   color: rgb(29, 95, 136);
 }
 
-.teste{
-  width: 200px;
-  height: 220px;
-  background-color: rgb(237, 89, 56);
-}
-@media screen and (min-width: 992px) {
-  .teste {background-color: rgb(7, 63, 106);}
-}
-
 .cadastrar{
   font-size: 1.0em;
+}
+
+/* Cadastro */
+
+.register-logo{
+  color: #476db1;
+  width: 100%;
+  position: fixed !important;
+  left: 74%;
+  height: 150px;
+  z-index: 1;
+}
+
+#register-wall{
+    background: #eeeeee ;
+}
+
+#register-header{
+  width: 100%;
+  position: fixed !important;
+  top: 0px;
+  left: 0px;
+  background: #004381;
+  height: 150px;
+}
+
+.register-card{
+  margin-top: 6.5%;
+  padding-top: 6%;
+}
+
+
+@media screen and (max-width: 600px) {
+  .register-logo {top: 2px;}
+}
+
+@media screen and (min-width: 600px) {
+  .register-logo {top: 22px;}
+  #area-buttons{padding-top: 30%;}
+}
+
+@media screen and (min-width: 1200px) {
+  .register-logo {top: 40px;}
+  #area-buttons{padding-top: 22%;}
 }
