@@ -56,19 +56,23 @@
 .register-card{
   margin-top: 6.5%;
   padding-top: 6%;
+
 }
 
 
 @media screen and (max-width: 600px) {
   .register-logo {top: 2px;}
+  .register-card{height: auto !important;}
 }
 
 @media screen and (min-width: 600px) {
   .register-logo {top: 22px;}
-  #area-buttons{padding-top: 30%;}
+  #area-buttons{padding-top: 33%;}
+  .register-card{height: 70%;}
 }
 
 @media screen and (min-width: 1200px) {
   .register-logo {top: 40px;}
-  #area-buttons{padding-top: 22%;}
+  #area-buttons{padding-top: 25%;}
+  .register-card{height: 70%;}
 }
