@@ -44,7 +44,7 @@
 </head>
 <body>
   <div class="section no-pad-bot">
-    
+
   </div>
       <!--  Scripts-->
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -54,3 +54,30 @@
     </body>
 
     </html>
+
+<?php
+//Conecção com o banco de Dados
+require_once "config.php";
+
+//Inicia Sessão
+session_start();
+
+//Confere se as variaveis estão com valores dentro caso contrario o codigo ira zerar as variaveis e mandar o espertinho para a page inicial.
+if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
+{
+unset($_SESSION['email']);
+unset($_SESSION['nome']);
+unset($_SESSION['senha']);
+header('location:index.php');
+}
+
+//Pega o email preenchido pelo usuario logado e busca o seu nome completo atraves do banco de dados.
+$email = $_SESSION['email'];
+
+$busca = mysql_query("SELECT * FROM usuarios WHERE email='$email'");
+$dado = mysql_fetch_array($busca);
+$nome = $dado['nome'];
+
+echo "Bem vindo ".$nome;
+
+?>
