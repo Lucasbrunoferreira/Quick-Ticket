@@ -1,7 +1,6 @@
 <?php
   require_once "config.php";
-?>
-
+ ?>
 <!-- Front End -->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,7 +62,7 @@
         <div class="card small z-depth-3" id="card-login">
           <br><span class="card-title" id="bem-vindo">Seja Bem Vindo !</span>
           <div class="row center">
-            <form class="" method="POST" action="?go=logar">
+            <form class="" method="POST" action="solicitacao.php">
                 <br>
               <div class="input-field col s8 m8 l10 offset-m1 offset-s1 offset-l1">
                 <i class="material-icons prefix icon_color_login" >email</i>
@@ -108,29 +107,3 @@
     </body>
 
     </html>
-    <?php
-
-      if(@$_GET['go'] == 'logar'){
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-
-        if(empty($email)){
-          echo "<script>alert('Preencha todos os campos para logar.');</script>";
-        }elseif(empty($senha)){
-          echo "<script>alert('Preencha todos os campos para logar.');</script>";
-        }else{
-        $query1 = mysql_num_rows(mysql_query("SELECT * FROM USUARIOS WHERE EMAIL = '$email' AND SENHA = '$senha'"));
-        if($query1 == 1){
-
-          echo "<script>alert('Logado com sucesso');</script>";
-
-          echo "<script>location.href='inicio.php';</script>";
-
-        }else{
-          echo "<script>alert('Senha incorreta'); history.back();</script>";
-        }
-      }
-    }
-
-
-?>

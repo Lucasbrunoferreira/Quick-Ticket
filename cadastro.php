@@ -105,14 +105,12 @@
     </body>
 </html>
 <?php
+
   if(@$_GET['go'] == 'cadastrar'){
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $csenha = $_POST['csenha'];
-
-    // Set session variables
-    $_SESSION["nome"] = $nome;
 
     if(empty($nome)){
       echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
