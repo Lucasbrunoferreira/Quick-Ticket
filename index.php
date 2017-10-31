@@ -1,4 +1,3 @@
-<!-- Conecção com o servidor de mysql -->
 <?php
   require_once "config.php";
 ?>
@@ -61,19 +60,19 @@
     <div class="container">
     <div class="row center">
       <div class="col s12 m6 offset-m3">
-        <div class="card small z-depth-3">
+        <div class="card small z-depth-3" id="card-login">
           <br><span class="card-title" id="bem-vindo">Seja Bem Vindo !</span>
           <div class="row center">
             <form class="" method="POST" action="?go=logar">
                 <br>
               <div class="input-field col s8 m8 l10 offset-m1 offset-s1 offset-l1">
                 <i class="material-icons prefix icon_color_login" >email</i>
-                <input id="icon_prefix email email" name="email" type="email" class="validate">
+                <input id="icon_prefix email email" name="email" required value="" type="email" class="validate">
                 <label for="icon_prefix">Email</label>
               </div>
               <div class="input-field col s8 m8 l10 offset-m1 offset-s1 offset-l1">
                 <i class="material-icons prefix icon_color_login">lock</i>
-                <input id="icon_prefix senha" name="senha" type="password" class="validate">
+                <input id="icon_prefix senha" name="senha" type="password" required value="" class="validate">
                 <label for="icon_prefix">Senha</label>
               </div>
               <div class="row">
@@ -110,7 +109,6 @@
 
     </html>
     <?php
-    session_start();
 
       if(@$_GET['go'] == 'logar'){
         $email = $_POST['email'];
@@ -124,10 +122,8 @@
         $query1 = mysql_num_rows(mysql_query("SELECT * FROM USUARIOS WHERE EMAIL = '$email' AND SENHA = '$senha'"));
         if($query1 == 1){
 
-          $_SESSION['email'] = $email;
-          $_SESSION['senha'] = $senha;
-
           echo "<script>alert('Logado com sucesso');</script>";
+
           echo "<script>location.href='inicio.php';</script>";
 
         }else{
@@ -136,4 +132,5 @@
       }
     }
 
-    ?>
+
+?>

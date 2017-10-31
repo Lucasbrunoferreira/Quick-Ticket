@@ -1,5 +1,4 @@
 /* Login */
-
 #login-wall{
   background: #06112d url("../images/wall.jpg") no-repeat center top fixed;
 
@@ -7,6 +6,10 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+#card-login{
+  background: rgba(0,0,0,0.7);
+  color: rgb(255, 255, 255);
 }
 
 #index-banner{

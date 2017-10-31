@@ -61,31 +61,31 @@
 
                <div class="input-field offset-m1 offset-s1 offset-l1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">account_circle</i>
-                 <input id="icon_prefix nome" name="nome" type="text" class="validate">
+                 <input id="icon_prefix nome" name="nome" type="text" class="validate" required value="">
                  <label for="icon_prefix">Nome Completo</label>
                </div>
                <div class="input-field offset-s1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">email</i>
-                 <input id="icon_telephone email" name="email" type="email" class="validate">
+                 <input id="icon_telephone email" name="email" type="email" class="validate" required value="">
                  <label for="icon_telephone">Email</label>
                </div>
                <div class="input-field offset-m1 offset-s1 offset-l1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">lock</i>
-                 <input id="icon_telephone senha" name="senha" type="password" class="validate">
+                 <input id="icon_telephone senha" name="senha" type="password" class="validate" required value="">
                  <label for="icon_telephone">Senha</label>
                </div>
                <div class="input-field offset-s1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">lock</i>
-                 <input id="icon_telephone csenha" name="csenha" type="password" class="validate">
+                 <input id="icon_telephone csenha" name="csenha" type="password" class="validate" required value="">
                  <label for="icon_telephone">Confirme sua senha</label>
                </div>
                <div class="row center-align" id="area-buttons">
                  <div class="offset-s2 offset-m3 col m3 s4 ">
-                   <button class="btn waves-effect waves-light " type="submit" name="action" style="background: #476db1">CADASTRAR
+                   <button onclick="confirmarSenha()" class="btn waves-effect waves-light " type="submit" name="action" style="background: #476db1">CADASTRAR
                    </button>
                  </div>
                  <div class="offse-s1 col m3 s3">
-                   <a href="index.html" class="btn waves-effect waves-light N/A transparent">
+                   <a href="index.php" class="btn waves-effect waves-light N/A transparent">
                     <b style="color:#004381;">CANCELAR</b>
                   </a>
                     </a>
@@ -111,6 +111,9 @@
     $senha = $_POST['senha'];
     $csenha = $_POST['csenha'];
 
+    // Set session variables
+    $_SESSION["nome"] = $nome;
+
     if(empty($nome)){
       echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
     }elseif(empty($email)){
@@ -119,6 +122,8 @@
       echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
     }elseif(empty($csenha)){
       echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
+    }elseif ($senha != $csenha) {
+      echo "<script>alert('As senhas não se coincidem!'); history.back();</script>";
     }else{
       $query1 = mysql_num_rows(mysql_query("SELECT * FROM USUARIOS WHERE EMAIL = '$email'"));
       if($query1 == 1){
@@ -129,5 +134,7 @@
         echo "<meta http-equiv='refresh' content='0, url=index.php'>";
       }
     }
+
+
   }
  ?>
