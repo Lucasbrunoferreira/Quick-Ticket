@@ -77,7 +77,19 @@ $email = $_SESSION['email'];
 $busca = mysql_query("SELECT * FROM usuarios WHERE email='$email'");
 $dado = mysql_fetch_array($busca);
 $nome = $dado['nome'];
+$cargo = $dado['cargo'];
+$recado = $dado['recado'];
 
-echo "Bem vindo ".$nome;
+echo "Bem vindo ".$nome." Seu cargo atual é: ".$cargo; ?>
 
+<form method="post" action="?go=mensagem">
+<input type="text" id="recado" name="recado"/>
+<button type="submit">
+
+<?php
+if(@$_GET['go'] = "mensagem"){
+  echo "<script>alert('OK')</script>";
+  mysql_query("insert into usuarios (recado) values ('$recado')");
+
+}else{echo "<script>alert('WTF')</script>";}
 ?>

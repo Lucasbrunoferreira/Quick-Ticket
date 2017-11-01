@@ -81,32 +81,32 @@
                </div>
                <div class="input-field offset-m1 offset-s1 offset-l1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">date_range</i>
-                 <input type="text" class="datepicker">
+                 <input type="text" class="datepicker" id="" name="">
                  <label for="icon_telephone">Data de Nascimento</label>
                </div>
                <div class="input-field offset-s1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">work</i>
-                 <select>
+                 <select id="cargo" name="cargo">
                    <option value="" disabled selected>Cargo</option>
-                   <option value="1">Administrador</option>
-                   <option value="2">TI</option>
-                   <option value="3">Recepcionista</option>
-                   <option value="5">Secretaria</option>
-                   <option value="6">Pronto Socorro</option>
-                   <option value="7">Pronto Atendimento</option>
-                   <option value="8">Farmaceutico(a)</option>
-                   <option value="9">Cozinha</option>
-                   <option value="10">Raio X</option>
-                   <option value="11">Resonancia</option>
-                   <option value="12">Tesouraria</option>
-                   <option value="13">Secretaria</option>
-                   <option value="14">Gerente Comercial</option>
-                   <option value="15">PBAX</option>
-                   <option value="16">Faturamento</option>
-                   <option value="17">Auditoria</option>
-                   <option value="18">RH</option>
-                   <option value="19">Bloco Cirurgico</option>
-                   <option value="20">Consultorio</option>
+                   <option value="Administrador">Administrador</option>
+                   <option value="TI">TI</option>
+                   <option value="Recepcionista">Recepcionista</option>
+                   <option value="Secretaria">Secretaria</option>
+                   <option value="Pronto Socorro">Pronto Socorro</option>
+                   <option value="Pronto Atendimento">Pronto Atendimento</option>
+                   <option value="Farmaceutico(a)">Farmaceutico(a)</option>
+                   <option value="Cozinha">Cozinha</option>
+                   <option value="Raio X">Raio X</option>
+                   <option value="Resonancia">Resonancia</option>
+                   <option value="Tesouraria">Tesouraria</option>
+                   <option value="Secretaria">Secretaria</option>
+                   <option value="Gerente Comercial">Gerente Comercial</option>
+                   <option value="PBAX">PBAX</option>
+                   <option value="Faturamento">Faturamento</option>
+                   <option value="Auditoria">Auditoria</option>
+                   <option value="RH">RH</option>
+                   <option value="Bloco Cirurgico">Bloco Cirurgico</option>
+                   <option value="Consultorio">Consultorio</option>
                  </select>
                </div>
                <div class="row center-align" id="area-buttons">
@@ -140,6 +140,7 @@
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $csenha = $_POST['csenha'];
+    $cargo = $_POST['cargo'];
 
     if(empty($nome)){
       echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
@@ -151,17 +152,16 @@
       echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
     }elseif ($senha != $csenha) {
       echo "<script>alert('As senhas não se coincidem!'); history.back();</script>";
-    }else{
+    }elseif(empty($cargo)){
+      echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
+  }else{
       $query1 = mysql_num_rows(mysql_query("SELECT * FROM USUARIOS WHERE EMAIL = '$email'"));
       if($query1 == 1){
         echo "<script>alert('Email já cadastrado.'); history.back();</script>";
       }else{
-        mysql_query("insert into usuarios (nome, email, senha) values ('$nome','$email','$senha')");
+        mysql_query("insert into usuarios (nome, email, senha, cargo) values ('$nome','$email','$senha', '$cargo')");
         echo "<script>alert('Usuario cadastrado com sucesso!');</script>";
-        echo "<meta http-equiv='refresh' content='0, url=index.php'>";
+        }
       }
     }
-
-
-  }
  ?>
