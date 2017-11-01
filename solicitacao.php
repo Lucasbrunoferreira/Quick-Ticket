@@ -16,7 +16,6 @@ if($query == 1){
 }else{
   unset($_SESSION['email']);
 	unset($_SESSION['senha']);
-  echo "<script>alert('Senha incorreta!')</script>";
 	header('location:index.php');
 
 }
