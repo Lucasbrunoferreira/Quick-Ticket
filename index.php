@@ -103,6 +103,7 @@
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="scripts/materialize.js"></script>
       <script src="scripts/init.js"></script>
+      <script src="scripts/main.js"></script>
 
     </body>
 
