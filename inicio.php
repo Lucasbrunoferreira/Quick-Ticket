@@ -1,28 +1,10 @@
 <?php
-//Conecção com o banco de Dados
-require_once "config.php";
+  session_start();
 
-//Inicia Sessão
-session_start();
-
-//Confere se as variaveis estão com valores dentro caso contrario o codigo ira zerar as variaveis e mandar o espertinho para a page inicial.
-if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
-{
-unset($_SESSION['email']);
-unset($_SESSION['nome']);
-unset($_SESSION['senha']);
-header('location:index.php');
-}
-
-//Pega o email preenchido pelo usuario logado e busca o seu nome completo atraves do banco de dados.
-$email = $_SESSION['email'];
-
-$busca = mysql_query("SELECT * FROM usuarios WHERE email='$email'");
-$dado = mysql_fetch_array($busca);
-$nome = $dado['nome'];
-
+  if(!isset($_SESSION['email'])){
+    header('Location: index.php?erro=2');
+  }
 ?>
-
 
 <html lang="pt-br">
 <head>
@@ -75,7 +57,9 @@ $nome = $dado['nome'];
           <img src="images/profile.jpg" alt="" class="center-align circle" style="margin:7px 30px 0px 0px;height:45px;width:auto";>
         </span>
         <span class="right" style="margin:0px 30px 0px 0px;">
-          <?php echo $nome; ?>
+          <?php echo $_SESSION['nome']; ?>
+          <span>  -  </span>
+          <?php echo $_SESSION['cargo']; ?>
         </span>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
@@ -83,11 +67,13 @@ $nome = $dado['nome'];
           <li><a href="badges.html">Pagina 1</a></li>
           <li><a href="collapsible.html">Pagina 2</a></li>
           <li><a href="mobile.html">Pagina 3</a></li>
+          <li><a href="logout.php">Sair</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="sass.html">Pagina 1</a></li>
           <li><a href="badges.html">Pagina 2</a></li>
           <li><a href="collapsible.html">Pagina 3</a></li>
+          <li><a href="logout.php">Sair</a></li>
         </ul>
       </div>
     </nav>
@@ -122,7 +108,6 @@ $nome = $dado['nome'];
         </div>
       </div>
 
-
       <ul class="collapsible popout" data-collapsible="accordion">
         <li>
           <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
@@ -149,9 +134,7 @@ $nome = $dado['nome'];
           <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
         </li>
       </ul>
-
-
-
+      
       <div class="fixed-action-btn horizontal">
         <a class="btn-floating btn-large" style="background-color:#001f71">
           <i class="large material-icons">mode_edit</i>
@@ -174,45 +157,3 @@ $nome = $dado['nome'];
     </body>
 
     </html>
-<<<<<<< HEAD
-
-<?php
-//Conecção com o banco de Dados
-require_once "config.php";
-
-//Inicia Sessão
-session_start();
-
-//Confere se as variaveis estão com valores dentro caso contrario o codigo ira zerar as variaveis e mandar o espertinho para a page inicial.
-if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
-{
-unset($_SESSION['email']);
-unset($_SESSION['nome']);
-unset($_SESSION['senha']);
-header('location:index.php');
-}
-
-//Pega o email preenchido pelo usuario logado e busca o seu nome completo atraves do banco de dados.
-$email = $_SESSION['email'];
-
-$busca = mysql_query("SELECT * FROM usuarios WHERE email='$email'");
-$dado = mysql_fetch_array($busca);
-$nome = $dado['nome'];
-$cargo = $dado['cargo'];
-$recado = $dado['recado'];
-
-echo "Bem vindo ".$nome." Seu cargo atual é: ".$cargo; ?>
-
-<form method="post" action="?go=mensagem">
-<input type="text" id="recado" name="recado"/>
-<button type="submit">
-
-<?php
-if(@$_GET['go'] = "mensagem"){
-  echo "<script>alert('OK')</script>";
-  mysql_query("insert into usuarios (recado) values ('$recado')");
-
-}else{echo "<script>alert('WTF')</script>";}
-?>
-=======
->>>>>>> fbf6d974a35425124a264ba6a372b10d7b0cfe28

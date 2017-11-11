@@ -1,6 +1,7 @@
-<?php
-  require_once "config.php";
- ?>
+<?php 
+  $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+  $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : 0;   // IF Ternario
+?>
 <!-- Front End -->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -62,16 +63,16 @@
         <div class="card small z-depth-3" id="card-login">
           <br><span class="card-title" id="bem-vindo">Seja Bem Vindo !</span>
           <div class="row center">
-            <form class="" method="POST" action="solicitacao.php">
+            <form class="" method="POST" action="validar_acesso.php">
                 <br>
               <div class="input-field col s8 m8 l10 offset-m1 offset-s1 offset-l1">
                 <i class="material-icons prefix icon_color_login" >email</i>
-                <input id="icon_prefix email email" name="email" required value="" type="email" class="validate">
+                <input id="icon_prefix email email" name="email" required value="" type="email" class="validate <?= $erro == 1 ? 'invalid' : '' ?>">
                 <label for="icon_prefix">Email</label>
               </div>
               <div class="input-field col s8 m8 l10 offset-m1 offset-s1 offset-l1">
                 <i class="material-icons prefix icon_color_login">lock</i>
-                <input id="icon_prefix senha" name="senha" type="password" required value="" class="validate">
+                <input id="icon_prefix senha" name="senha" type="password" required value="" class="validate <?= $erro == 1 ? 'invalid' : '' ?>">
                 <label for="icon_prefix">Senha</label>
               </div>
               <div class="row">
@@ -79,8 +80,15 @@
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
-                <br><br><br>
-
+                <br>
+                <?php 
+                    if($erro == 1)
+                      echo '<div class="col offset-s1 s10 card-panel" style="background:rgba(100,0,0,0.6);padding-top:6px;"><i class="material-icons">error</i>&emsp;Usuario e ou Senha inválido(s)!</div>';          
+                    if($erro == 2)
+                        echo '<div class="col offset-s1 s10 card-panel" style="background:rgba(100,0,0,0.6);padding-top:6px;"><i class="material-icons">error</i>&emsp;Erro ao efetuar login!</div>';
+                    if($sucesso == 1)
+                        echo '<div class="col offset-s1 s10 card-panel" style="background:rgba(0, 80, 0, 0.4);padding-top:6px;"><i class="material-icons">check</i>&emsp;Cadastro efetuado com sucesso!</div>';                  
+                ?>
                 <div class="fixed-action-btn toolbar">
                   <a class="btn-floating btn-large  light-blue darken-4 pulse">
                     <i class="large material-icons">feedback</i>
@@ -93,7 +101,7 @@
                 </div>
 
               </div>
-            </form>
+            </form>          
           </div>
         </div>
       </div>
