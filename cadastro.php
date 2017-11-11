@@ -1,9 +1,9 @@
- <!-- Buffer de saída é "esvaziado"-->
-<?php ob_start(); ?>
-  <!-- Conecção com o servidor de mysql -->
 <?php
-    require_once "config.php";
+  $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+  $erro_email = isset($_GET['erro_email']) ? $_GET['erro_email'] : 0;
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -56,7 +56,7 @@
                <h5 style="color: #004381"><b>Cadastre-se</b></h5>
              </div>
            </div>
-           <form class="col s12" method="POST" action="?go=cadastrar">
+           <form class="col s12" method="POST" action="registrar_usuario.php">
              <div class="row">
 
                <div class="input-field offset-m1 offset-s1 offset-l1 col s8 l5 m5">
@@ -66,17 +66,17 @@
                </div>
                <div class="input-field offset-s1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">email</i>
-                 <input id="icon_telephone email" name="email" type="email" class="validate" required value="">
+                 <input id="icon_telephone email" name="email" type="email" class="validate <?= $erro_email == 1 ? 'invalid' : '' ?>" required value="">
                  <label for="icon_telephone">Email</label>
                </div>
                <div class="input-field offset-m1 offset-s1 offset-l1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">lock_open</i>
-                 <input id="icon_telephone senha" name="senha" type="password" class="validate" required value="">
+                 <input id="icon_telephone senha" name="senha" type="password" class="validate <?= $erro == 1 ? 'invalid' : '' ?>" required value="">
                  <label for="icon_telephone">Senha</label>
                </div>
                <div class="input-field offset-s1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">lock_outline</i>
-                 <input id="icon_telephone csenha" name="csenha" type="password" class="validate" required value="">
+                 <input id="icon_telephone csenha" name="csenha" type="password" class="validate <?= $erro == 1 ? 'invalid' : '' ?>" required value="">
                  <label for="icon_telephone">Confirme sua senha</label>
                </div>
                <div class="input-field offset-m1 offset-s1 offset-l1 col s8 l5 m5">
@@ -86,27 +86,27 @@
                </div>
                <div class="input-field offset-s1 col s8 l5 m5">
                  <i class="material-icons prefix icon_color_login">work</i>
-                 <select>
+                 <select name="cargo">
                    <option value="" disabled selected>Cargo</option>
-                   <option value="1">Administrador</option>
-                   <option value="2">TI</option>
-                   <option value="3">Recepcionista</option>
-                   <option value="5">Secretaria</option>
-                   <option value="6">Pronto Socorro</option>
-                   <option value="7">Pronto Atendimento</option>
-                   <option value="8">Farmaceutico(a)</option>
-                   <option value="9">Cozinha</option>
-                   <option value="10">Raio X</option>
-                   <option value="11">Resonancia</option>
-                   <option value="12">Tesouraria</option>
-                   <option value="13">Secretaria</option>
-                   <option value="14">Gerente Comercial</option>
-                   <option value="15">PBAX</option>
-                   <option value="16">Faturamento</option>
-                   <option value="17">Auditoria</option>
-                   <option value="18">RH</option>
-                   <option value="19">Bloco Cirurgico</option>
-                   <option value="20">Consultorio</option>
+                   <option value="Administrador">Administrador</option>
+                   <option value="TI">TI</option>
+                   <option value="Recepcionista">Recepcionista</option>
+                   <option value="Secretaria">Secretaria</option>
+                   <option value="Pronto Socorro">Pronto Socorro</option>
+                   <option value="Pronto Atendimento">Pronto Atendimento</option>
+                   <option value="Farmaceutico(a)">Farmaceutico(a)</option>
+                   <option value="Cozinha">Cozinha</option>
+                   <option value="Raio X">Raio X</option>
+                   <option value="Resonancia">Resonancia</option>
+                   <option value="Tesouraria">Tesouraria</option>
+                   <option value="Secretaria">Secretaria</option>
+                   <option value="Gerente Comercial">Gerente Comercial</option>
+                   <option value="PBAX">PBAX</option>
+                   <option value="Faturamento">Faturamento</option>
+                   <option value="Auditoria">Auditoria</option>
+                   <option value="RH">RH</option>
+                   <option value="Bloco Cirurgico">Bloco Cirurgico</option>
+                   <option value="Consultorio">Consultorio</option>
                  </select>
                </div>
                <div class="row center-align" id="area-buttons">
@@ -116,15 +116,23 @@
                  <div class="col m3 s4">
                    <a href="index.php" class="btn waves-effect waves-light N/A transparent">
                     <b style="color:#004381;">CANCELAR</b>
-                  </a>
-                    </a>
+                  </a>                
                  </div>
               </div>
              </div>
            </form>
-         </div>
+         </div>   
+          <?php
+            if($erro == 1)
+              echo '<div class="card center-align white-text" style="background:rgba(140, 0, 0, 0.7);"><i class="material-icons" style="padding-top:4px;">error</i>&emsp;As senhas não se coincidem!</div>';
+            if($erro_email == 1)
+              echo '<div class="card center-align white-text" style="background:rgba(140, 0, 0, 0.7);"><i class="material-icons" style="padding-top:4px;">error</i>&emsp;Email informado já esta em uso!</div>';
+            ?>      
        </div>
+      
       </div>
+      
+
 
       <!--  Scripts-->
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -133,35 +141,3 @@
 
     </body>
 </html>
-<?php
-
-  if(@$_GET['go'] == 'cadastrar'){
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $csenha = $_POST['csenha'];
-
-    if(empty($nome)){
-      echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
-    }elseif(empty($email)){
-      echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
-    }elseif(empty($senha)){
-      echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
-    }elseif(empty($csenha)){
-      echo "<script>alert('Preencha todos os campos para o cadastro.'); history.back();</script>";
-    }elseif ($senha != $csenha) {
-      echo "<script>alert('As senhas não se coincidem!'); history.back();</script>";
-    }else{
-      $query1 = mysql_num_rows(mysql_query("SELECT * FROM USUARIOS WHERE EMAIL = '$email'"));
-      if($query1 == 1){
-        echo "<script>alert('Email já cadastrado.'); history.back();</script>";
-      }else{
-        mysql_query("insert into usuarios (nome, email, senha) values ('$nome','$email','$senha')");
-        echo "<script>alert('Usuario cadastrado com sucesso!');</script>";
-        echo "<meta http-equiv='refresh' content='0, url=index.php'>";
-      }
-    }
-
-
-  }
- ?>
