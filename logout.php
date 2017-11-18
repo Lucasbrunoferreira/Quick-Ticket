@@ -4,9 +4,9 @@
 
     unset($_SESSION['email']);
     unset($_SESSION['nome']);
+    unset($_SESSION['senha']);
     unset($_SESSION['cargo']);
 
-    echo '<script>alert("Esperamos você novamente em breve!")</script>';
-
+    header('Location: index.php.?logout=1');
 
 ?>

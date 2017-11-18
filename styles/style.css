@@ -1,3 +1,9 @@
+html{
+  position:fixed;
+  width:100%;
+  height:100%;
+}
+
 /* Login */
 #login-wall{
   background: #06112d url("../images/wall.jpg") no-repeat center top fixed;
@@ -18,7 +24,7 @@
 
 #bem-vindo{
   font-family: 'Pacifico', cursive;
-  color: #0e4d81;
+  color: #bbc0cf;
 }
 
 .icon_color_login{
@@ -61,6 +67,7 @@
 @media screen and (max-width: 600px) {
   .register-logo {top: 2px;}
   .register-card{height: auto !important;}
+  #profile-photo{height: 10px;}
 }
 
 @media screen and (min-width: 600px) {
@@ -76,3 +83,78 @@
 }
 
 /* Inicio */
+#body-page-inicio{
+  background: #eeeeee;
+}
+
+#nav-page-inicio{
+  background: #343434 !important;
+}
+
+#logo-page-inicio{
+  padding: 5px 25px 0px 40px;
+  height: 95%;
+}
+
+#inicio-nome{
+  padding-bottom: 20px;
+}
+
+#profile-photo{
+  height: 96%;
+}
+
+#sub-nav{
+  height: 6% !important;
+  background: #4b78b1 !important;
+  margin: -1px;
+}
+
+#cargo{
+  color: #ffffff;
+  padding-top: 7px;
+  padding-left: 20px;
+
+}
+
+#icon-cargo{
+    padding-left: 8%;
+    padding-top: 10px;
+}
+
+.container-sub-nav{
+  margin-right: 0% !important;
+}
+
+#user-name{
+  padding-left: 90px;
+}
+
+#corpo-inicio{
+  background: #fcfcfc;
+}
+
+
+@media screen and (max-width: 600px) {
+  #logo-page-inicio{padding-left: 8px;}
+  #user-name{padding-left: 14%;}
+  #icon-cargo{padding-left: 15px;}
+  #cargo{padding-top: 8px;padding-left: 1px;}
+  #sub-bar{height: 50px;width: 50px;}
+}
+
+@media screen and (min-width: 600px){
+  #sub-bar{padding-right: 40px;}
+  .barra-icons{height: 60px;}
+  #add-ticket{color:#fff;padding-top:10px;padding-left:30%;}
+}
+
+@media screen and (max-height: 500px) {
+  #icon-cargo{padding-top: 5px }
+  #icon-cargo i {font-size: 19px;}
+  #cargo{font-size: 10px; padding-top: 1px !important;}
+  }
+
+@media screen and (min-width: 1200px) {
+  #cargo{padding: 8px 0px 0px 25px}
+}
