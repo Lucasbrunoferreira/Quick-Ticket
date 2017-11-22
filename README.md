@@ -2,18 +2,18 @@
 > Sistema empresarial para auxiliar usuarios em troca de tarefas.
 
 
-![](images/logo)
+![](images/logo_quick.png)
 
 ## Linguagens
 
-PHP
-SQL
-JavScript (AJAX)
+*PHP
+*SQL
+*JavScript (AJAX)
 
 
 ## Bibliotecas
 
-Materialize
+*Materialize
 Material Design
 
 
@@ -28,5 +28,5 @@ Material Design
 
 ## Integrantes
 
-Lucas Bruno Ferreira
-Vinicius Rodrigues
+*Lucas Bruno Ferreira
+*Vinicius Rodrigues
