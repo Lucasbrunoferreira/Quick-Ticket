@@ -1,35 +1,40 @@
 <?php
 
-session_start();
+    session_start();
 
-  if(!isset($_SESSION['email'])){
-    header('Location: index.php.?erro=1');
-  }
+    if(!$_SESSION['email']){
+		header('Location: index.php?erro=1');
+	}
 
-  require_once('config.php');
+    require_once('config.php');
 
-  $id_usuario = $_SESSION['id_usuario'];
+    $id_usuario = $_SESSION['id_usuario'];
+    $cargo_usuario = $_SESSION['cargo'];
 
-  $objDb = new db;
-  $link = $objDb->conecta_mysql();
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+    
+    $sql = "SELECT DATE_FORMAT(t.data_inclusao, '%d %b %Y %T') AS data_inclusao_formatada, t.prioridade, t.destino, t.ticket, u.nome ";
+    $sql .= "FROM ticket AS t JOIN usuarios AS u ON (t.id_usuario = u.id) ";
+     
+    $resultado_id = mysqli_query($link, $sql);
 
-  $sql = "SELECT DATE_FORMAT(t.data_inclusao, '%d %b %Y %T') AS data_inclusao_formatada, t.ticket, u.nome ";
-  $sql.= " FROM ticket AS t JOIN usuarios AS u ON (t.id_usuario = u.id) ";
-  $sql.= " WHERE id_usuario = $id_usuario ORDER BY data_inclusao DESC ";
+    if($resultado_id){
+        
 
-  $resultado_id = mysqli_query($link, $sql);
+        while($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
+        
+            if($cargo_usuario == $registro['destino']){
 
-if($resultado_id){
+                 echo '<li>';
+                 echo '<div class="collapsible-header"><i class="material-icons">fiber_new</i>'.$registro['nome'].'<br>'.$registro['data_inclusao_formatada'].'</div>';
+                 echo '<div class="collapsible-body"><b>Status:</b> Em andamento <br> <b>Prioridade: </b>'.$registro['prioridade'].'<br><br> <b>Solicitação: </b><span>'.$registro['ticket'].'</span></div>';
+                 echo '</li>';
+            }
+        }
 
-  while($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
-  echo '<a href="#" class="list-group-item">';
-    echo '<h4 class="list-group-item-heading">'.$registro['nome'].' <small> - '.$registro['data_inclusao_formatada'].' </small></h4>';
-    echo '<h4><p class="list-group-item-text">'.$registro['ticket'].'</p><h4>';
-  echo '</a>';
-}
-
-}else{
-  echo 'Erro na consulta de tickets!';
-}
+    }else{
+        echo 'Erro na consulta de tickets no banco de dados!';
+    }
 
 ?>

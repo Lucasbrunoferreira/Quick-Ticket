@@ -20,6 +20,7 @@
     
     if(isset($dados_usuario['email'])){ //Verifica o campo email dentro do array de consulta
 
+      $_SESSION['id_usuario'] = $dados_usuario['id'];
       $_SESSION['nome'] = $dados_usuario['nome'];
       $_SESSION['cargo'] = $dados_usuario['cargo'];
       $_SESSION['email'] = $dados_usuario['email'];

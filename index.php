@@ -1,6 +1,7 @@
 <?php 
   $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
-  $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : 0;   // IF Ternario
+  $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : 0;
+  $logout = isset($_GET['logout']) ? $_GET['logout'] : 0;   // IF Ternario
 ?>
 <!-- Front End -->
 <!DOCTYPE html>
@@ -87,7 +88,9 @@
                     if($erro == 2)
                         echo '<div class="col offset-s1 s10 card-panel" style="background:rgba(100,0,0,0.6);padding-top:6px;"><i class="material-icons">error</i>&emsp;Erro ao efetuar login!</div>';
                     if($sucesso == 1)
-                        echo '<div class="col offset-s1 s10 card-panel" style="background:rgba(0, 80, 0, 0.4);padding-top:6px;"><i class="material-icons">check</i>&emsp;Cadastro efetuado com sucesso!</div>';                  
+                        echo '<div class="col offset-s1 s10 card-panel" style="background:rgba(0, 80, 0, 0.4);padding-top:6px;"><i class="material-icons">check</i>&emsp;Cadastro efetuado com sucesso!</div>';
+                    if($logout == 1)
+                        echo '<div class="col offset-s1 s10 card-panel" style="background:rgba(30, 90, 150, 0.4);padding-top:6px;">&emsp;Você efetuou Logout!</div>';                  
                 ?>
                 <div class="fixed-action-btn toolbar">
                   <a class="btn-floating btn-large  light-blue darken-4 pulse">

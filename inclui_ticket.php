@@ -1,25 +1,28 @@
 <?php
 
-if(!isset($_SESSION['usuario'])){
-  header('Location: index.php?erro=2');
-}
+  session_start();
 
-session_start();
+  if(!isset($_SESSION['email'])){
+    header('Location: index.php?erro=2');
+  }
 
-require_once('config.php');
+  require_once('config.php');
 
-$texto_ticket = $_POST['texto_ticket'];
-$id_usuario = $_SESSION['id_usuario'];
+  $texto_ticket = $_POST['texto_ticket'];
+  $destino = $_POST['destino'];
+  $id_usuario = $_SESSION['id_usuario'];
+  $prioridade = $_POST['prioridade'];
 
-if($texto_ticket == '' || $id_usuario == ''  ){
-  die();
-}
+  if($texto_ticket == '' || $id_usuario == ''){
+    die();
+  }
 
-$objDb = new db();
-$link = $objDb->conecta_mysql();
+  $objDb = new db();
+  $link = $objDb->conecta_mysql();
 
-$sql = " INSERT INTO ticket(id_usuario, ticket)values($id_usuario, '$texto_ticket') ";
+  $sql = " INSERT INTO ticket(id_usuario, ticket, destino, prioridade)values($id_usuario, '$texto_ticket', '$destino', '$prioridade') ";
 
-mysqli_query($link, $sql);
+  mysqli_query($link, $sql);
+
 
  ?>

@@ -131,7 +131,7 @@ html{
 }
 
 #corpo-inicio{
-  background: #fcfcfc;
+  
 }
 
 
@@ -157,4 +157,10 @@ html{
 
 @media screen and (min-width: 1200px) {
   #cargo{padding: 8px 0px 0px 25px}
+}
+
+/* Novo Ticket*/
+
+.form-ticket{
+  padding-top: 5%;
 }

@@ -1,6 +1,8 @@
 <?php
   session_start();
 
+  require_once('config.php');
+
   if(!isset($_SESSION['email'])){
     header('Location: index.php?erro=2');
   }
@@ -54,9 +56,9 @@
   <nav id="nav-page-inicio">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo left"><img id="logo-page-inicio" src="images/logo_quick.png"></a>
-      <span id="user-name">Lucas Bruno Ferreira</span>
+      <span id="user-name"> <?php echo $_SESSION['nome']; ?></span>
       <ul class="right barra-icons">
-        <li><a href=""><i class="material-icons" style="color:#9c9c9c;font-size:2.5em;">exit_to_app</i></a></li>
+        <li><a href="logout.php"><i class="material-icons" style="color:#9c9c9c;font-size:2.5em;">exit_to_app</i></a></li>
         <li id="sub-bar"><img id="profile-photo" class="circle" src="images/profile.jpg"></li>
       </ul>
     </div>
@@ -67,12 +69,37 @@
         <i class="material-icons" style="color:#363636;width:20px!important">work</i>
       </div>
        <div class="col s5 m4 l4" id="cargo">
-         <h6>Sala de Cirurgia</h6>
+         <h6> <?php echo $_SESSION['cargo']; ?> </h6>
       </div>
-      <div class="col ofsset-m1 m6 s5 l6" id="add-ticket" style="color:#fff;padding-top:10px;"> <i class="material-icons" style="vertical-align: middle;">playlist_add</i> Novo Ticket</div>
+      <div class="col m6 s5 l6" id="add-ticket" style="color:#fff;padding-top:10px;"><a href="novo_ticket.php" style="color:#fff;"> <i class="material-icons" style="vertical-align: middle;">playlist_add</i> Novo Ticket</a></div>
      </div>
    </div>
-     <div class="col ofsset-m1 m10" id="corpo-inicio">
+
+      <div class="row" style="padding:3% 0%;">
+        <div class="col offset-m1 offset-l1 s12 m10 l10 ">
+         <div class="valign-wrapper">
+             <div class="col offset-l1 offset-m1 offset-s1"> 
+                <i class="material-icons small icon_color_login">list</i>
+                <span style="font-size:2.3em;"> <b> 14 </b></span>
+             </div>
+              <div class="col offset-l3 offset-m3 offset-s2"> 
+                <i class="material-icons small icon_color_login">warning</i>
+                <span style="font-size:2.3em;"> <b> 14 </b></span><br>
+             </div>
+             <div class="col offset-l3 offset-m3 offset-s2"> 
+                <i class="material-icons small icon_color_login">check_circle</i>
+                <span style="font-size:2.3em;"> <b> 14 </b></span>             
+             </div>
+         </div>
+        </div>
+      </div>
+
+      
+
+   <div id="corpo-inicio">
+    <div class="row">
+      <ul class="collapsible popout col offset-l3 offset-m2 s12 m8 l6" id="tickets" data-collapsible="accordion"></ul>
+    </div>
    </div>
     
 
@@ -83,5 +110,5 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="scripts/materialize.js"></script>
     <script src="scripts/init.js"></script>
-
+    <script src="scripts/main.js"></script>
 </html>
