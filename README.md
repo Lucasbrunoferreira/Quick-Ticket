@@ -1,8 +1,8 @@
-# QUICK TICKET
+# ![](images/logo_quick.png) QUICK TICKET
 > Sistema empresarial para auxiliar usuarios em troca de tarefas.
 
 
-![](images/logo_quick.png)
+
 
 ## Linguagens
 
