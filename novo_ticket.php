@@ -93,8 +93,9 @@
       </div>
     </div>
 
+    <div class="card card-novo-ticket">
     <div class="row form-ticket">
-      <form id="form_ticket" class="col offset-s1 s10 offset-m2 offset-l2 ">
+      <form id="form_ticket" class="col offset-s1 s10 offset-m2 offset-l2">
         <div class="row">
           <div class="input-field col l9 s11 m9">
             <i class="material-icons prefix" style="color#343434;">local_offer</i>
@@ -103,7 +104,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s11 l4 m4  ">
+          <div class="input-field col s11 l4 m4">
             <i style="color#343434;" class="material-icons prefix">work</i>
             <select name="destino">
               <option value="" disabled selected>Destino</option>
@@ -145,21 +146,17 @@
         <button class="btn waves-effect waves-light" id="btn-ticket" style="background:#4B78B1;" type="submit" name="action">Enviar
           <i class="material-icons right">send</i>
         </button>
+        </div>
       </div>
-      </form>
-    </div>
-    </div>
+     </div>
+   </form>
 
-
+  </div>
   </body>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="scripts/materialize.js"></script>
   <script src="scripts/init.js"></script>
   <script src="scripts/main.js"></script>
-
-  <script type="text/javascript">
-
-  </script>
-
+  <script src="scripts/service-init.js" async></script>
   </html>

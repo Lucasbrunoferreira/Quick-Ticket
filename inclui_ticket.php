@@ -13,7 +13,8 @@
   $id_usuario = $_SESSION['id_usuario'];
   $prioridade = $_POST['prioridade'];
 
-  if($texto_ticket == '' || $id_usuario == ''){
+  if($texto_ticket == '' || $id_usuario == '' || $prioridade == '' || $destino == ''){
+    echo 'Campo vazio';
     die();
   }
 

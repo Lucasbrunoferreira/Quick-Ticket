@@ -115,7 +115,7 @@
       <script src="scripts/materialize.js"></script>
       <script src="scripts/init.js"></script>
       <script src="scripts/main.js"></script>
-
+      <script src="scripts/service-init.js" async></script>
     </body>
 
     </html>
