@@ -2,8 +2,7 @@
 > Sistema empresarial para auxiliar usuarios em troca de tarefas.
 
 ## O Projeto
-   * Em empresas de médiio a grande porte, que possuem mais de 1 setor, funcionarios encontram dificuldades para solicitarem 
-
+   * Quick Ticket auxilia o ligamento entre setores de empresas de médio/grande porte. Através do sistema, funcionarios e diretores         ficam a par de todo o andamento de solicitações realizados entre setores.
 
 ## Linguagens
 
