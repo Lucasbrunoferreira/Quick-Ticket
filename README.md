@@ -21,22 +21,6 @@
 
 ## Auxilios
 
-
-### Progressive Web APP - PWA
-
-   * Progressivo - Funciona para qualquer usuário, independentemente do navegador escolhido, pois é criado com aprimoramento progressivo como princípio fundamental.
-   * Responsivo - Se adequa a qualquer formato: desktop, celular, tablet ou o que for inventado a seguir.
-   * Independente de conectividade - Aprimorado com service workers para trabalhar off-line ou em redes de baixa qualidade.
-   * Semelhante a aplicativos - Parece com aplicativos para os usuários, com interações e navegação de estilo de aplicativos, pois é compilado no modelo de shell de aplicativo.
-   * Atual - Sempre atualizado graças ao processo de atualização do service worker.
-   * Seguro - Fornecido via HTTPS para evitar invasões e garantir que o conteúdo não seja adulterado.
-   * Descobrível - Pode ser identificado como "aplicativo" graças aos manifestos W3C e ao escopo de registro do service worker, que permitem que os mecanismos de pesquisa os encontrem.
-   * Reenvolvente - Facilita o reengajamento com recursos como notificações push.
-   * Instalável - Permite que os usuários "guardem" os aplicativos mais úteis em suas telas iniciais sem precisar acessar uma loja de aplicativos.
-   * Linkável - Compartilhe facilmente por URL, não requer instalação complexa. 
-
-    [Confira na página oficial do Google](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=pt-br)
-
 #### Progressive Web APP - PWA
 
    * Progressivo - Funciona para qualquer usuário, independentemente do navegador escolhido, pois é criado com aprimoramento progressivo como princípio fundamental.
@@ -68,7 +52,7 @@
 
 ## Portifólio
 
-* [Tela de Inicio](https://imgur.com/E2rknp2)
+* [Tela de Inicio](https://imgur.com/E2rknp2.png)
 
 
 * [Tela de Cadastro](https://i.imgur.com/iso1LCo.png)
