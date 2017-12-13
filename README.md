@@ -1,15 +1,11 @@
-<<<<<<< HEAD
+
 # ![](images/logo-readme.png)
 > Sistema empresarial para auxiliar usuarios em troca de tarefas.
 
-=======
-# ![](images/quick-ticket.png)
-> Sistema empresarial para auxiliar usuarios em troca de tarefas.
 
 ## O Projeto
    * Quick Ticket auxilia o ligamento entre setores de empresas de médio/grande porte. Através do sistema, funcionarios e diretores         ficam a par de todo o andamento de solicitações realizados entre setores.
 
->>>>>>> 32beda9ef9f3be973a2cd08615dbeb25b3ebb87c
 ## Linguagens
 
 * PHP
@@ -25,7 +21,7 @@
 
 ## Auxilios
 
-<<<<<<< HEAD
+
 ### Progressive Web APP - PWA
 
    * Progressivo - Funciona para qualquer usuário, independentemente do navegador escolhido, pois é criado com aprimoramento progressivo como princípio fundamental.
@@ -40,7 +36,7 @@
    * Linkável - Compartilhe facilmente por URL, não requer instalação complexa. 
 
     [Confira na página oficial do Google](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=pt-br)
-=======
+
 #### Progressive Web APP - PWA
 
    * Progressivo - Funciona para qualquer usuário, independentemente do navegador escolhido, pois é criado com aprimoramento progressivo como princípio fundamental.
@@ -56,7 +52,6 @@
      
      [Confira na página oficial do Google](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=pt-br)
     
->>>>>>> 32beda9ef9f3be973a2cd08615dbeb25b3ebb87c
 
 ## Histórico de lançamentos
 
@@ -73,16 +68,6 @@
 
 ## Portifólio
 
-<<<<<<< HEAD
-[Imgur](https://i.imgur.com/E2rknp2.png)
->Tela de Login
-
-[Imgur](https://i.imgur.com/iso1LCo.png)
->tela de cadastro
-
-[Imgur](https://i.imgur.com/SFElLXC.png)
->tela de Tickets urgentes
-=======
 * [Tela de Inicio](https://imgur.com/E2rknp2)
 
 
@@ -92,5 +77,5 @@
 * [Tela de Tickets](https://i.imgur.com/SFElLXC.png)
 
 
->>>>>>> 32beda9ef9f3be973a2cd08615dbeb25b3ebb87c
+
 
